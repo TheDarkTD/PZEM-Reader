@@ -1,7 +1,6 @@
 # PZEM-Reader
 
-![PZEM] (https://cdn.awsli.com.br/600x700/2599/2599375/produto/216438508da6a28666c.jpg)
-
+![Imagem do PZEM](https://cdn.awsli.com.br/600x700/2599/2599375/produto/216438508da6a28666c.jpg)
 ## Descrição
 
 Este projeto utiliza o módulo PZEM para medir e monitorar parâmetros elétricos, como tensão, corrente, potência e energia. O objetivo é fornecer uma solução prática e acessível para a medição de consumo elétrico.
