@@ -1,6 +1,6 @@
 # PZEM-Reader
 
-![PZEM]((https://cdn.awsli.com.br/600x700/2599/2599375/produto/216438508da6a28666c.jpg))
+![PZEM] (https://cdn.awsli.com.br/600x700/2599/2599375/produto/216438508da6a28666c.jpg)
 
 ## Descrição
 
