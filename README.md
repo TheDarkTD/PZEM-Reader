@@ -27,11 +27,3 @@ Este projeto utiliza o módulo PZEM para medir e monitorar parâmetros elétrico
 2. **Configuração do ESP32:** Carregue o código no ESP32 usando o Arduino IDE.
 3. **Monitoramento:** Utilize o aplicativo correspondente (ou um dashboard) para visualizar os dados coletados.
 
-## Instalação
-
-Siga os passos abaixo para configurar o projeto em sua máquina:
-
-1. Clone este repositório:
-   ```bash
-   git clone https://github.com/seu_usuario/seu_repositorio.git
-
