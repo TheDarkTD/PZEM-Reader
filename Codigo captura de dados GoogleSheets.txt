@@ -1,0 +1,57 @@
+/********************************************************************************
+ * Nome: Felipe Rodrigues Moreira Dos Santos
+ * E-mail: axfeliperodrigues@gmail.com
+ * Data: 19/10/2024
+ * Descrição: Codigo para captura de dados do brocker AdafruitIO
+ * Versão: 1.1
+ * GitHub: https://github.com/TheDarkTD
+ ********************************************************************************/
+
+
+function fetchAdafruitData() {
+  var urlVoltage = 'https://io.adafruit.com/api/v2/TheDarkTD/feeds/voltage'; // URL da API para voltagem
+  var urlCurrent = 'https://io.adafruit.com/api/v2/TheDarkTD/feeds/current'; // URL da API para corrente
+  var urlPf = 'https://io.adafruit.com/api/v2/TheDarkTD/feeds/pf'; // URL da API para fator de potência
+  var urlFrequency = 'https://io.adafruit.com/api/v2/TheDarkTD/feeds/frequency'; // URL da API para frequência
+  var urlPower = 'https://io.adafruit.com/api/v2/TheDarkTD/feeds/power'; // URL da API para potência
+  var key = 'aio_knzR09P6BLThZ6wVKvYrsZ7GvRXL'; // Sua chave de API Adafruit IO
+
+  var options = {
+    'method': 'get',
+    'headers': {
+      'X-AIO-Key': key
+    }
+  };
+
+  
+// Busca os dados
+  var responseVoltage = UrlFetchApp.fetch(urlVoltage, options);
+  var dataVoltage = JSON.parse(responseVoltage.getContentText());
+  var voltageValue = dataVoltage.last_value.replace('.', ',');
+  
+  var responseCurrent = UrlFetchApp.fetch(urlCurrent, options);
+  var dataCurrent = JSON.parse(responseCurrent.getContentText());
+  var currentValue = dataCurrent.last_value.replace('.', ',');
+
+  var responsePf = UrlFetchApp.fetch(urlPf, options);
+  var dataPf = JSON.parse(responsePf.getContentText());
+  var pfValue = dataPf.last_value.replace('.', ',');
+
+  var responseFrequency = UrlFetchApp.fetch(urlFrequency, options);
+  var dataFrequency = JSON.parse(responseFrequency.getContentText());
+  var frequencyValue = dataFrequency.last_value.replace('.', ',');
+
+  var responsePower = UrlFetchApp.fetch(urlPower, options);
+  var dataPower = JSON.parse(responsePower.getContentText());
+  var powerValue = dataPower.last_value.replace('.', ',');
+
+  // Obter o horário atual
+  var currentTime = new Date();
+  var timeString = Utilities.formatDate(currentTime, Session.getScriptTimeZone(), "HH:mm:ss");
+
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+
+  // Adiciona os novos dados com horário
+  sheet.appendRow([voltageValue, currentValue, pfValue, frequencyValue, powerValue, timeString]); // [ tensâo, corrente, pf, frequência, potência, horário]
+
+}
