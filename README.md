@@ -15,7 +15,7 @@ Este projeto utiliza o módulo PZEM para medir e monitorar parâmetros elétrico
 
 ## Tecnologias Utilizadas
 
-- [PZEM-004T](https://www.example.com/link_do_dados_do_sensor) (ou outro sensor que você esteja usando)
+- [PZEM-004T](https://www.baudaeletronica.com.br/produto/modulo-de-monitoramento-eletrico-multifuncao-pzem-004t.html) (ou outro sensor que você esteja usando)
 - [ESP32](https://www.espressif.com/en/products/socs/esp32)
 - [Adafruit IO](https://io.adafruit.com/)
 - [Arduino IDE](https://www.arduino.cc/en/software)
